@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" id="apply-here">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="We are an easy access and small-scale doggy daycare centre where safety and fun comes first.">
+    <meta name="keywords" content="dog, daycare, swindon, uk">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-32x32.png">
+    <title>Dixie's Doggy Daycare</title>
+</head>
+
+<body class="dark-text">
+    <header class=show-on-small>
+        <a href="index.html">
+            <h1 id="logo-top" class="logo-color">Dixie's</h1>
+        </a>
+        <nav id="menu">
+            <ul>
+                <li>
+                    <a href="index.html" class="dark-text" aria-label="Go to homepage">Home</a>
+                </li>
+                <li>
+                    <a href="about-us.html" class="dark-text" aria-label="Go to About us">About us</a>
+                </li>
+                <li>
+                    <a href="apply-here.html" class="active" aria-label="Go to Apply here">Apply here</a>
+                </li>
+            </ul>
+            <div></div>
+        </nav>
+        <!-- This feature was based on https://www.w3schools.com/howto/howto_js_popup_form.asp -->
+        <!-- adjusted with an extra pop up thank you note and a closing X -->
+        <div class="change-schedule" onclick="openForm(); closeCsThanks();"><i
+                class="far fa-calendar-alt logo-color"></i>
+            <span class="cs-text">Change my schedule</span></div>
+        <!-- div with id="myForm" is hidden until the user klicks on the Change schedule button-->
+        <div class="form-popup" id="myForm">
+            <form action="javascript:closeForm(); openCsThanks();" class="form-container">
+                <label for="cs-dogs-name">Dog's name:</label>
+                <input id="cs-dogs-name" type="text" name="cs-dogs-name" required>
+                <label for="cs-date">Date for schedule change:</label>
+                <input id="cs-date" type="date" name="cs-date" required>
+                <div class="cs-time">
+                    <label for="cs-start-time">New start time:</label><br>
+                    <input id="cs-start-time" type="time" name="cs-start-time" required>
+                </div>
+                <div class="cs-time">
+                    <label for="cs-coll-time">New collect time:</label><br>
+                    <input id="cs-coll-time" type="time" name="cs-coll-time" required>
+                </div>
+                <label for="cs-text">Comment:</label>
+                <input id="cs-text" type="text" name="cs-text">
+                <button type="submit" class="button">Submit</button>
+                <button type="button" class="cancel" onclick="closeForm();" value="">
+                    <i class="fas fa-times"></i>
+                </button>
+            </form>
+        </div>
+        <!-- div with id="csThanks" is hidden until the user klicks on the submit button of the Change schedule form-->
+        <div class="form-thanks" id="csThanks">
+            <b>Thank you for using our web tool to change your schedule.</b>
+            <button type="button" class="cancel" onclick="closeCsThanks();" value="">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </header>
+    <section>
+        <div id="apply-here-container">
+            <div id="appl-logo">
+                <a href="index.html" aria-label="Go to homepage" class="logo-color">Dixie’s</a>
+            </div>
+            <div id="app-form-container">
+                <div id="apply">
+                    <h2>Make a preliminary application.</h2>
+                    <p>We will contact you as soon as possible.</p>
+                </div>
+                <div id="app-form">
+                    <form action="thank-you.html">
+                        <div class="half-row">
+                            <label for="dogs-name">Dog's Name:*</label><br>
+                            <input id="dogs-name" type="text" name="dogs-name" required><br><br>
+                        </div>
+                        <div class="half-row end">
+                            <label for="dogs-breed">Dog's Breed:</label><br>
+                            <input id="dogs-breed" type="text" name="dogs-breed"><br><br>
+                        </div>
+                        <div class="third-row">
+                            <label for="dogs-age">Age of dog:*</label><br>
+                            <input id="dogs-age" type="number" name="dogs-age" min="1" max="20" required>
+                            <select id="year-month" name="year-month" required>
+                                <option value="" disabled selected>Select age unit</option>
+                                <option value="year">Years</option>
+                                <option value="month">Months</option>
+                            </select><br><br>
+                        </div>
+                        <div class="third-row">
+                            <label for="gender">Dog's Gender:*</label><br>
+                            <select id="gender" name="gender" required>
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select><br><br>
+                        </div>
+                        <div>
+                            <label for="day-length">Length of day:*</label><br>
+                            <select id="day-length" name="day-length" required>
+                                <option value="" disabled selected>Select day length</option>
+                                <option value="part-time">Part Time</option>
+                                <option value="full-time">Full Time</option>
+                            </select><br><br>
+                        </div>
+                        <div class="half-row">
+                            <label for="owner-fname">Owner's First Name:*</label><br>
+                            <input id="owner-fname" type="text" name="owner-fname" required><br><br>
+                        </div>
+                        <div class="half-row end">
+                            <label for="owner-lname">Owner's Last Name:*</label><br>
+                            <input id="owner-lname" type="text" name="owner-lname" required><br><br>
+                        </div>
+                        <label for="e-mail">E-mail:*</label><br>
+                        <input id="e-mail" type="email" name="e-mail" required><br><br>
+                        <label for="info">Additional information:</label><br>
+                        <textarea name="nfo" id="info"
+                            placeholder="Is there more information you like to share about you or your dog?"></textarea><br><br>
+                        <p>* Required field</p>
+                        <input type="submit" value="Submit" class="button">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class=show-on-small>
+        <div id="footer-container">
+            <ul class="social-media-links">
+                <li>
+                    <a href="http://facebook.com" target="_blank" rel="noopener"
+                        aria-label="Visit our Facebook page (opens in a new tab)">
+                        <p><i class="fab fa-facebook"></i><span id="facebook">Facebook</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://instagram.com" target="_blank" rel="noopener"
+                        aria-label="Visit our Instagram page (opens in a new tab)">
+                        <p><i class="fab fa-instagram"></i><span id="instagram">Instagram</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://twitter.com" target="_blank" rel="noopener"
+                        aria-label="Visit our Twitter page (opens in a new tab)">
+                        <p><i class="fab fa-twitter"></i><span id="twitter">Twitter</span></p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="footer-center">
+                <li id="logo-bottom" class="logo-color">Dixie's</li>
+                <li id="copyright">© Dixie's 2021</li>
+            </ul>
+            <ul class="contacts">
+                <li>4 Old Mill Ln, Swindon</li>
+                <li>Tel.: 1793 1234 564789</li>
+                <li>dixies@doggies.uk</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Script for popup form -->
+    <!-- The snippet of code for the popup form was copied from https://www.w3schools.com/howto/howto_js_popup_form.asp-->
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+
+        function openCsThanks() {
+            document.getElementById("csThanks").style.display = "block";
+        }
+
+        function closeCsThanks() {
+            document.getElementById("csThanks").style.display = "none";
+        }
+    </script>
+
+    <!-- font awesome script -->
+    <script src="https://kit.fontawesome.com/231be424f5.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
